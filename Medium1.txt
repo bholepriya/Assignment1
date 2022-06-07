@@ -1,0 +1,15 @@
+class Solution {
+    public double myPow(double x, int n) {
+        
+        double pow = 1
+        if(n>0)
+        {
+            pow = Math.pow(x,n);
+        }
+        else
+        {
+            pow = Math.pow(x,n);
+        }
+        return pow;
+    }
+}
