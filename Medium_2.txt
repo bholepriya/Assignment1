@@ -1,0 +1,53 @@
+class Solution {
+    public static int reverse(int x)
+    {
+        if(x<=((2^31)-1) || x>=(-2^31))
+        { 
+            if(x>=0)
+            {
+                int sum = 0;
+                int duplicate = x;
+                while(x>0)
+                {
+                    int rem = x%10;
+                    sum = sum * 10 + rem;
+                    if(rem != (sum % 10)) // this condition is used to check the range of integer
+                    {
+                     return 0;
+                     }
+                    x = x/10;
+                }
+                return (int)sum;
+            }
+        
+            else
+            {
+                x = (-1)*x;
+                 int sum = 0;
+                int duplicate = x;
+                while(x>0)
+                {
+                    int rem = x%10;
+                    sum = sum * 10 + rem;
+                    if(rem != (sum % 10)) 
+                    {
+                     return 0;
+                     }
+
+                    x = x/10;
+                }
+              sum = sum * (-1);
+                return (int)sum;
+            }
+        }
+    
+        return 0;
+     }
+    public static void main(String args[])
+    {
+       Scanner sc = new Scanner(System.in);
+       int i = sc.nextInt();
+        int reverseNum = reverse(i);
+        System.out.println(reverseNum);
+    }
+           }
